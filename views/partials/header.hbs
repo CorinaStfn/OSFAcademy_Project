@@ -1,0 +1,79 @@
+
+<div class = "container-xl" >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Project Title</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Women
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    </div>
+                    </li>
+                    <script>                               
+                        const div1 = document.querySelector('div.dropdown-menu');
+                        let requestURL = 'https://cors-anywhere.herokuapp.com/https://osf-digital-backend-academy.herokuapp.com/api/categories/parent/womens?secretKey=$2a$08$J3FIGSJZH1Jz/qqou91F0eyhQLUwzJxSRAW4kYB5McQ2OBIOM1p9W';
+
+                        let request = new XMLHttpRequest();
+                        request.open('GET', requestURL);
+                        request.responseType = 'json';
+                        request.send();
+
+                        request.onload = async () => {
+                            const womens = request.response;
+                            await populateHeader1(womens);
+    
+                        }                               
+
+                        function populateHeader1(jsonObj1) {
+
+                            for(i = 0; i < jsonObj1.length; i++) {
+                                const a = document.createElement('a');
+                                a.className = "dropdown-item";
+                                a.href = jsonObj1[i].id;
+                                a.textContent = jsonObj1[i].name;
+
+                                div1.appendChild(a);
+                            }
+                        }
+                    </script>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Men
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        </div>
+                    </li>
+                    <script>
+                        const div2 = document.querySelectorAll('div.dropdown-menu')[1];
+                        let requestURL2 = 'https://cors-anywhere.herokuapp.com/https://osf-digital-backend-academy.herokuapp.com/api/categories/parent/mens?secretKey=$2a$08$J3FIGSJZH1Jz/qqou91F0eyhQLUwzJxSRAW4kYB5McQ2OBIOM1p9W';
+
+                        let request2 = new XMLHttpRequest();
+                        request2.open('GET', requestURL2);
+                        request2.responseType = 'json';
+                        request2.send();
+
+                        request2.onload = async () => {
+                            const mens = request2.response;
+                            await populateHeader2(mens);
+    
+                        } 
+                        function populateHeader2(jsonObj1) {
+                            for(i = 0; i < jsonObj1.length; i++) {
+                                const a = document.createElement('a');
+                                a.className = "dropdown-item";
+                                a.href = jsonObj1[i].id;
+                                a.textContent = jsonObj1[i].name;
+
+                                div2.appendChild(a);
+                            }
+                        }
+                    </script>
+            </ul>
+        </div>
+    </nav>
+</div>

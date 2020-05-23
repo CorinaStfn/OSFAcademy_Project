@@ -1,0 +1,36 @@
+{
+  "name": "v6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sentry/node": "^5.15.5",
+    "bootstrap": "^4.5.0",
+    "compile-sass": "^1.1.0",
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "handlebars": "^4.7.6",
+    "hbs": "^4.1.1",
+    "html": "^1.0.0",
+    "jquery": "^3.5.1",
+    "node-fetch": "^2.6.0",
+    "nodemon": "^2.0.4",
+    "npm-git-install": "^0.3.0",
+    "popper.js": "^1.14.3",
+    "pug": "^2.0.4",
+    "puh": "^1.0.0",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0"
+  }
+}
