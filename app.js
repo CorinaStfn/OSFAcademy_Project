@@ -40,3 +40,5 @@ app.use(productRoutes);
 app.listen(3000, () => {
     console.log('The application is running on localhost:3000!')
 });
+
+module.exports = app; // for testing

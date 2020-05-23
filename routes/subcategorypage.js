@@ -6,24 +6,6 @@ const fetch = require("node-fetch");
 
 let requestURL = 'https://osf-digital-backend-academy.herokuapp.com/api/categories?secretKey=$2a$08$J3FIGSJZH1Jz/qqou91F0eyhQLUwzJxSRAW4kYB5McQ2OBIOM1p9W';
 
-async function getAllCategories(){
-    const response = await fetch(requestURL);
-    const data = await response.json();
-    return data
-}
-
-  // category by id
-async function getCategoryByid(id){
-    const catdesc = await getAllCategories();
-    return catdesc.find(cat => cat.id === id);
-}
-
-// all category by paret id 
-async function getCategoryByParentid(id){
-    const catdesc = await getAllCategories();
-    return catdesc.filter(scat => scat.parent_category_id === id);
-}
-
 router.get('/:id/:id2', async(req, res) => {
     try{
     //  const categ = await getCategoryByid(req.params.id2);
