@@ -15,7 +15,7 @@
     "compile-sass": "^1.1.0",
     "ejs": "^3.1.2",
     "express": "^4.17.1",
-    "express-handlebars": "^4.0.4",
+    "express-handlebars": "^5.3.1",
     "handlebars": "^4.7.6",
     "hbs": "^4.1.1",
     "html": "^1.0.0",
